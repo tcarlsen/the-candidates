@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+html(lang="da" ng-app)
+head
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible" content="IE=edge")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  title Kandidatlisten
+  link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700")
+  link(rel="stylesheet" href="bower_components/ionicons/css/ionicons.css")
+  link(rel="stylesheet" href="styles.min.css")
+body
+  div.container
+    ul.helper
+      li Sandsynligvis valg iflg Berlingske (131)
+      li Valg iflg. Berlingske (8)
+      li Officielt valgt (12)
+      li Antal mandater fordelt (121/179)
+    h1.header Her er de 179 nye folketingsmedlemmer
+    p.description Her er oversigten over de 179 nye folketingsmedlemmer - 109 mænd og 70 kvinder - efter valget den 15. september 2011. Der tages forbehold for evt. yderligere fintællinger.
+    small.updated Senest opdateret: Fredag den 24. april kl. 10:36
+    div.view
+      div.toggler
+        string Visning
+        div.togg Parti
+        div.togg Kandidat
+      strong.show-all Vis alle kandidater #[i]
+    div
+      h1 Party
+      div Antal stemmer: 881.534 - Andel: 24,9 % - Mandater: 44
+      table
+        thead
+          tr
+            th Kandidat #[i]
+            th Storkreds #[i]
+            th Stemmetal #[i]
+            th Status #[i]
+        tbody
+          tr
+            td 
+              img(src)
+              | Sophie Hæstorp Andersen
+            td Københavns Omegns
+            td 919528
+            td 
+              i.ion-record
+              i.ion-record
+              i.ion-record
+            
+  script(src="bower_components/angular/angular.js")
+  script(src="bower_components/angular-touch/angular-touch.js")
+  script(src="bower_components/angular-route/angular-route.js")
+  script(src="scripts.min.js")
