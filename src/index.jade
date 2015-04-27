@@ -11,23 +11,41 @@ head
 body
   div.container
     ul.helper
-      li Sandsynligvis valg iflg Berlingske (131)
-      li Valg iflg. Berlingske (8)
-      li Officielt valgt (12)
-      li Antal mandater fordelt (121/179)
+      li 
+        | Sandsynligvis valg iflg Berlingske #[strong (131)] 
+        div.status.maybe
+          i.ion-record
+          i.ion-record
+          i.ion-record
+      li 
+        | Valg iflg. Berlingske #[strong (8)]
+        div.status.pretty-sure
+          i.ion-record
+          i.ion-record
+          i.ion-record
+      li 
+        | Officielt valgt #[strong (12)]
+        div.status.definitely
+          i.ion-record
+          i.ion-record
+          i.ion-record
+      li Antal mandater fordelt #[strong (121/179)]
     h1.header Her er de 179 nye folketingsmedlemmer
     p.description Her er oversigten over de 179 nye folketingsmedlemmer - 109 mænd og 70 kvinder - efter valget den 15. september 2011. Der tages forbehold for evt. yderligere fintællinger.
     small.updated Senest opdateret: Fredag den 24. april kl. 10:36
     div.view
       div.toggler
-        string Visning
-        div.togg Parti
-        div.togg Kandidat
+        strong Visning
+        span.togg.active Parti
+        span.togg Kandidat
       strong.show-all Vis alle kandidater #[i]
+      .clearfix
     div
-      h1 Party
-      div Antal stemmer: 881.534 - Andel: 24,9 % - Mandater: 44
-      table
+      h1.party-header 
+        img.party-logo(src="img/a_big.png" srcset="img/a_big@2x.png 2x" alt="Socialdemokraterne")
+        | Socialdemokraterne
+      div.table-stats Antal stemmer: 881.534 - Andel: 24,9 % - Mandater: 44
+      table.striped
         thead
           tr
             th Kandidat #[i]
@@ -37,11 +55,41 @@ body
         tbody
           tr
             td 
-              img(src)
+              img.avatar(src="img/dummy.png")
               | Sophie Hæstorp Andersen
             td Københavns Omegns
-            td 919528
+            td.number 919528
+            td.status
+              i.ion-record
+              i.ion-record
+              i.ion-record
+          tr
             td 
+              img.avatar(src="img/dummy.png")
+              | Sophie Hæstorp Andersen
+            td Københavns Omegns
+            td.number 919528
+            td.status.maybe
+              i.ion-record
+              i.ion-record
+              i.ion-record
+          tr
+            td 
+              img.avatar(src="img/dummy.png")
+              | Sophie Hæstorp Andersen
+            td Københavns Omegns
+            td.number 919528
+            td.status.pretty-sure
+              i.ion-record
+              i.ion-record
+              i.ion-record
+          tr
+            td 
+              img.avatar(src="img/dummy.png")
+              | Sophie Hæstorp Andersen
+            td Københavns Omegns
+            td.number 919528
+            td.status.definitely
               i.ion-record
               i.ion-record
               i.ion-record
