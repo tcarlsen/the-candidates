@@ -8,6 +8,8 @@ $green: #2ECC40;
 $red: #FF4136;
 $yellow: #FFDC00;
 
+$border-radius: 3em;
+
 html, body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
@@ -61,7 +63,7 @@ th {
 
   &:first-child {
     text-align: left;
-    padding-left: 15px;
+    padding-left: 1em;
   }
 }
 
@@ -144,35 +146,84 @@ td {
 .view {
   margin: 1em 0.5em;
   font-size: 0.9em;
+  user-select: none;
 }
 
 .toggler {
   float: left;
   margin-right: 1em;
+  line-height: 2em;
+
+  &-label {
+    margin-right: 1em;
+    font-weight: 600;
+  }
+
+  & > * {
+    float: left;
+  }
 }
 
-.togg {
+.switch {
+  position: relative;
+  height: 2em;
+  line-height: 2em;
+  width: 15em;
+  background: $white;
   border: 1px solid $dark-grey;
   border-radius: 0.3em;
-  padding: 0.3em 1.3em;
   color: $dark-grey;
+  overflow: hidden;
 
-  &.active {
-    background-color: $orange;
-    border-color: $orange;
-    color: $white;
+  &-label {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
   }
-
-  &:first-child {
-    margin-left: 1em;
-    border-right: none;
+  &-input {
+    display: none;
+    &:checked + .switch-label {
+      color: $white;
+      transition: 0.15s ease-out;
+    }
+    &:checked + .switch-label-on ~ .switch-selection {
+      /* Note: left: 50% doesn't transition in WebKit */
+      //left: 60px;
+      transform: translate3d(100%,0,0);
+    }
   }
-
-  &:last-child {
-    border-left: none;
+  &-selection {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: $orange;
+    transition: transform 0.15s ease-out;
+    transform: translate3d(0,0,0);
+    will-change: transform;
+    border-radius: .3em;
   }
 }
 
-.show-all {
-  float: left;
+.fancycheckbox {
+  &-input {
+    display: none;
+    &:checked + .fancycheckbox-label:after {
+      content: "\f373";
+      color: $orange;
+    }
+  }
+  &-label:after {
+    color: $dark-grey;
+    font-family: "Ionicons";
+    content: "\f372";
+    font-size: 2.5em;
+    vertical-align: middle;
+  }
 }
