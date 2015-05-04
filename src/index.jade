@@ -30,11 +30,11 @@ body
           i.ion-record
           i.ion-record
           i.ion-record
-      li Antal mandater fordelt #[strong (121/179)]
+      li.mandater Antal mandater fordelt #[strong (121/179)]
     p.description Her er oversigten over de 179 nye folketingsmedlemmer - 109 mænd og 70 kvinder - efter valget den 15. september 2011. Der tages forbehold for evt. yderligere fintællinger.
     small.updated Senest opdateret: Fredag den 24. april kl. 10:36
     div.view
-      div.toggler
+      div.party.toggler
         span.toggler-label Visning
         .switch
           input#parti.switch-input(type='radio', name='view', value='parti', checked='')
@@ -42,64 +42,45 @@ body
           input#kandidat.switch-input(type='radio', name='view', value='kandidat')
           label.switch-label.switch-label-on(for='kandidat') Kandidat
           span.switch-selection
-      div.toggler
-        span.toggler-label Vis alle kandidater
+      div.checkbox.toggler
         input#showallcandidates.fancycheckbox-input(type="checkbox" name="showallcandidates")
         label.fancycheckbox-label(for="showallcandidates")
+          span.toggler-label Vis alle kandidater
       .clearfix
     div
       h1.party-header
         img.party-logo(src="img/a_big.png" srcset="img/a_big@2x.png 2x" alt="Socialdemokraterne")
         | Socialdemokraterne
-      div.table-stats Antal stemmer: 881.534 - Andel: 24,9 % - Mandater: 44
+      table.table-stats
+        tr
+          td Antal stemmer
+          td.number 881.534
+        tr
+          td Andel
+          td.number 24,9%
+        tr
+          td Mandater
+          td.number 44
       table.striped
         thead
           tr
             th Kandidat #[i]
-            th Storkreds #[i]
-            th Stemmetal #[i]
-            th Status #[i]
+            th.mobile-hide Storkreds #[i]
+            th.number Stemmer #[i]
+            th.status Status #[i]
         tbody
-          tr
-            td
-              img.avatar(src="img/dummy.png")
-              | Sophie Hæstorp Andersen
-            td Københavns Omegns
-            td.number 919528
-            td.status
-              i.ion-record
-              i.ion-record
-              i.ion-record
-          tr
-            td
-              img.avatar(src="img/dummy.png")
-              | Sophie Hæstorp Andersen
-            td Københavns Omegns
-            td.number 919528
-            td.status.maybe
-              i.ion-record
-              i.ion-record
-              i.ion-record
-          tr
-            td
-              img.avatar(src="img/dummy.png")
-              | Sophie Hæstorp Andersen
-            td Københavns Omegns
-            td.number 919528
-            td.status.pretty-sure
-              i.ion-record
-              i.ion-record
-              i.ion-record
-          tr
-            td
-              img.avatar(src="img/dummy.png")
-              | Sophie Hæstorp Andersen
-            td Københavns Omegns
-            td.number 919528
-            td.status.definitely
-              i.ion-record
-              i.ion-record
-              i.ion-record
+          each i in new Array(10)
+            tr
+              td
+                img.avatar(src="img/dummy.png")
+                span.candidatename Sophie Hæstorp Andersen
+                span.candidatelocation Københavns Omegns
+              td.mobile-hide Københavns Omegns
+              td.number 919528
+              td.status
+                i.ion-record
+                i.ion-record
+                i.ion-record
 
   script(src="bower_components/angular/angular.js")
   script(src="bower_components/angular-touch/angular-touch.js")
