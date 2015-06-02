@@ -1,0 +1,42 @@
+h1.app-header {{header}}
+ul.helper
+  li
+    | Sandsynligvis valgt iflg Berlingske #[strong ({{stats.probably}})]
+    div.status.maybe
+      i.fa.fa-circle
+      i.fa.fa-circle
+      i.fa.fa-circle
+  li
+    | Valgt iflg. Berlingske #[strong ({{stats.predicted}})]
+    div.status.pretty-sure
+      i.fa.fa-circle
+      i.fa.fa-circle
+      i.fa.fa-circle
+  li
+    | Officielt valgt #[strong ({{stats.official}})]
+    div.status.definitely
+      i.fa.fa-circle
+      i.fa.fa-circle
+      i.fa.fa-circle
+  li.mandater 
+    | Antal mandater fordelt 
+    strong ({{stats.mandates}}/179)
+    div.status
+p.description {{description}}
+small.updated Senest opdateret: {{updated | date:'medium'}}
+div.view
+  div.party.toggler(ng-hide="location=='ritzau'")
+    span.toggler-label Visning
+    .switch
+      input#parti.switch-input(type='radio', name='view', value='parti', ng-checked="location=='parti'")
+      label.switch-label.switch-label-off(for='parti' ng-click="changeView('partier')" ng-class="{'active': location=='partier'}") Parti
+      input#kandidat.switch-input(type='radio', name='view', value='kandidat' ng-checked="location=='kandidater'")
+      label.switch-label.switch-label-on(for='kandidat' ng-click="changeView('kandidater')" ng-class="{'active': location=='kandidater'}") Kandidat
+      span.switch-selection
+  div.ritzau(ng-hide="location=='ritzau'")
+    span.ritzau-label Oversigt:&nbsp;
+    a.ritzau-button(ng-href="#/ritzau") Stemmer for valgte og ikke valgte
+  div.ritzau(ng-show="location=='ritzau'")
+    a.ritzau-button(ng-href="#/") Hvem er valgt?
+  .clearfix
+div.view-container(ng-view autoscroll="true")

@@ -1,0 +1,31 @@
+table.striped
+  thead
+    tr
+      th #
+      th(ng-click="changeOrder('name')") 
+        | Kandidat&nbsp;
+        i(ng-class="{'fa fa-sort-alpha-asc': order=='name' && reverse==false, 'fa fa-sort-alpha-desc': order=='name' && reverse==true}")
+      th.mobile-hide(ng-click="changeOrder('party_name')")
+        | Parti&nbsp;
+        i(ng-class="{'fa fa-sort-alpha-asc': order=='party_name' && reverse==false, 'fa fa-sort-alpha-desc': order=='party_name' && reverse==true}")
+      th.mobile-hide(ng-click="changeOrder('storkreds')")
+        | Storkreds&nbsp;
+        i(ng-class="{'fa fa-sort-alpha-asc': order=='storkreds' && reverse==false, 'fa fa-sort-alpha-desc': order=='storkreds' && reverse==true}")
+      th.number(ng-click="changeOrder('-votes')")
+        | Stemmer&nbsp;
+        i(ng-class="{'fa fa-sort-numeric-asc': order=='-votes' && reverse==true, 'fa fa-sort-numeric-desc': order=='-votes' && reverse==false}")
+      th.number(ng-click="changeOrder('-votes_pct')")
+        | Andel&nbsp;
+        i(ng-class="{'fa fa-sort-numeric-asc': order=='-votes_pct' && reverse==true, 'fa fa-sort-numeric-desc': order=='-votes_pct' && reverse==false}")
+  tbody
+    tr(ng-repeat="candidate in candidates | orderBy:order:reverse")
+      td {{($index + 1) | number}}
+      td
+        span.candidatename {{candidate.name}}
+        span.candidateparty &nbsp;({{candidate.party_letter}})
+        span.candidatelocation {{candidate.storkreds}}
+      td.mobile-hide {{candidate.party_name}}
+      td.mobile-hide {{candidate.location_name}}
+      td.number {{candidate.votes | number}}
+      td.number {{candidate.votes_pct | number}}
+      

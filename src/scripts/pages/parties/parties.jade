@@ -1,0 +1,47 @@
+div(ng-repeat="party in parties")
+  h1.party-header
+    i.partylogo.small-size(ng-class="party.party_letter")
+    | {{party.party_name}}
+  table.table-stats
+    tr
+      td Antal stemmer
+      td.number {{party.votes | number}}
+    tr
+      td Andel
+      td.number {{party.votes_pct | number}}%
+    tr
+      td Mandater
+      td.number {{party.mandates}}
+  table.striped
+    thead
+      tr
+        th(ng-click="changeOrder('name')") 
+          | Kandidat&nbsp;
+          i(ng-class="{'fa fa-sort-alpha-asc': order=='name' && reverse==false, 'fa fa-sort-alpha-desc': order=='name' && reverse==true}")
+        th.mobile-hide(ng-click="changeOrder('party_name')")
+          | Parti&nbsp;
+          i(ng-class="{'fa fa-sort-alpha-asc': order=='party_name' && reverse==false, 'fa fa-sort-alpha-desc': order=='party_name' && reverse==true}")
+        th.mobile-hide(ng-click="changeOrder('storkreds')")
+          | Storkreds&nbsp;
+          i(ng-class="{'fa fa-sort-alpha-asc': order=='storkreds' && reverse==false, 'fa fa-sort-alpha-desc': order=='storkreds' && reverse==true}")
+        th.number(ng-click="changeOrder('-votes')")
+          | Stemmer&nbsp;
+          i(ng-class="{'fa fa-sort-numeric-asc': order=='-votes' && reverse==true, 'fa fa-sort-numeric-desc': order=='-votes' && reverse==false}")
+        th.status(ng-click="changeOrder('-status')")
+          | Status&nbsp;
+          i(ng-class="{'fa fa-sort-amount-asc': order=='-status' && reverse==true, 'fa fa-sort-amount-desc': order=='-status' && reverse==false}")
+    tbody
+      tr(ng-show="!party.candidates.length")
+        td(colspan="5") Endnu ikke muligt at vurdere valgte kandidater for partiet.
+      tr(ng-repeat="candidate in party.candidates | orderBy:order:reverse")
+        td
+          span.candidatename {{candidate.name}}
+          span.candidateparty &nbsp;({{candidate.party_letter}})
+          span.candidatelocation {{candidate.storkreds}}
+        td.mobile-hide {{candidate.party_name}}
+        td.mobile-hide {{candidate.storkreds}}
+        td.number {{candidate.votes | number}}
+        td.status(ng-class="{'maybe': candidate.status==1, 'pretty-sure': candidate.status==2, 'definitely': candidate.status==3}")
+          i.fa.fa-circle
+          i.fa.fa-circle
+          i.fa.fa-circle
