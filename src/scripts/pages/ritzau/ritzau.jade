@@ -8,9 +8,9 @@ table.striped
       th.mobile-hide(ng-click="changeOrder('party_name')")
         | Parti&nbsp;
         i(ng-class="{'fa fa-sort-alpha-asc': order=='party_name' && reverse==false, 'fa fa-sort-alpha-desc': order=='party_name' && reverse==true}")
-      th.mobile-hide(ng-click="changeOrder('storkreds')")
+      th.mobile-hide(ng-click="changeOrder('location_name')")
         | Storkreds&nbsp;
-        i(ng-class="{'fa fa-sort-alpha-asc': order=='storkreds' && reverse==false, 'fa fa-sort-alpha-desc': order=='storkreds' && reverse==true}")
+        i(ng-class="{'fa fa-sort-alpha-asc': order=='location_name' && reverse==false, 'fa fa-sort-alpha-desc': order=='location_name' && reverse==true}")
       th.number(ng-click="changeOrder('-votes')")
         | Stemmer&nbsp;
         i(ng-class="{'fa fa-sort-numeric-asc': order=='-votes' && reverse==true, 'fa fa-sort-numeric-desc': order=='-votes' && reverse==false}")
