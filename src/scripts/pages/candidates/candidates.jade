@@ -19,7 +19,7 @@ table.striped
   tbody
     tr(ng-repeat="candidate in candidates | orderBy:order:reverse")
       td
-        span.candidatename {{candidate.name}}
+        a(ng-href="{{candidate.profile_url}}").candidatename {{candidate.name}}
         span.candidateparty &nbsp;({{candidate.party_letter}})
         span.candidatelocation {{candidate.storkreds}}
       td.mobile-hide {{candidate.party_name}}

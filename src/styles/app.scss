@@ -283,6 +283,14 @@ thead th {
   }
 }
 
+.candidatename {
+  color: #000;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .candidatelocation, .candidateparty {
   display: none;
 }
