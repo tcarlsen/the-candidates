@@ -33,10 +33,9 @@ div.view
       input#kandidat.switch-input(type='radio', name='view', value='kandidat' ng-checked="location=='kandidater'")
       label.switch-label.switch-label-on(for='kandidat' ng-click="changeView('kandidater')" ng-class="{'active': location=='kandidater'}") Kandidat
       span.switch-selection
-  div.ritzau(ng-hide="location=='ritzau'")
-    span.ritzau-label Oversigt:&nbsp;
-    a.ritzau-button(ng-href="#/ritzau") Stemmer for valgte og ikke valgte
-  div.ritzau(ng-show="location=='ritzau'")
-    a.ritzau-button(ng-href="#/") Hvem er valgt?
+  div.overview
+    a.overview-button(ng-href="#/ritzau" ng-hide="location=='ritzau'") Stemmer for valgte og ikke valgte
+    a.overview-button(ng-href="#/" ng-show="location=='ritzau'") Hvem er valgt?
+    a.overview-button(href="http://www.politiko.dk/statistik") De valgte statistisk set
   .clearfix
 div.view-container(ng-view autoscroll="true")

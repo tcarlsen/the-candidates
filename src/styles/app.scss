@@ -206,7 +206,7 @@ thead th {
   }
 }
 
-.ritzau {
+.overview {
   float: left;
   line-height: 2em;
 
@@ -222,10 +222,14 @@ thead th {
     color: $dark-grey;
     text-decoration: none;
     color: $white;
+    white-space: nowrap;
     &:hover {
       text-decoration: none;
       color: $white;
       background-attachment: $orange-light;
+    }
+    &:last-child {
+      margin-left: 10px;
     }
   }
 }
