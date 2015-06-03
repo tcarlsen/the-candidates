@@ -403,6 +403,22 @@ thead th {
       line-height: 3rem;
     }
   }
+
+  .overview {
+    width: 100%;
+    &-label {
+      display: none;
+    }
+    &-button {
+      display: block;
+      text-align: center;
+
+      &:last-child {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
   .striped {
     td {
       line-height: 1.2em;
