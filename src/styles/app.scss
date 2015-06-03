@@ -151,6 +151,7 @@ th.status {
 
 thead th {
   border-bottom: none;
+  cursor: pointer;
 }
 
 .avatar {
@@ -185,7 +186,7 @@ thead th {
 }
 
 .view {
-  margin: 1em 0.5em;
+  margin: 1em 0;
   font-size: 0.9em;
   user-select: none;
 }
@@ -221,6 +222,11 @@ thead th {
     color: $dark-grey;
     text-decoration: none;
     color: $white;
+    &:hover {
+      text-decoration: none;
+      color: $white;
+      background-attachment: $orange-light;
+    }
   }
 }
 
