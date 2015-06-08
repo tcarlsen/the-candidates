@@ -7,6 +7,7 @@ $navy: #162C34;
 $green: #4fb139;
 $red: #d44c39;
 $yellow: #f4aa0c;
+$light-black: #aaa;
 
 $border-radius: 3em;
 
@@ -28,13 +29,13 @@ $border-radius: 3em;
 .helper {
   float: right;
   list-style: none;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 30px;
   padding: 0;
-  font-size: 0.9em;
   text-align: right;
+  color: $light-black;
 
   li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
 
     &:last-child {
       margin-right: 3.2em;
@@ -134,7 +135,7 @@ td {
 
 .helper .status {
   display: inline;
-  margin: 0 0 0 1em;
+  margin: 0 0 0 .5em;
   width: 3.5em;
 }
 
@@ -185,7 +186,7 @@ thead th {
 }
 
 .view {
-  margin: 1em 0;
+  margin: 3em 0 1em 0;
   font-size: 0.9em;
   user-select: none;
 }
@@ -215,7 +216,8 @@ thead th {
   }
 
   &-button {
-    padding: 0.5em 1em;
+    float: left;
+    padding: .1em 1em;
     background: $orange;
     border-radius: .3em;
     color: $dark-grey;
@@ -235,7 +237,6 @@ thead th {
 
 .switch {
   position: relative;
-  height: 2em;
   line-height: 2em;
   width: 15em;
   background: $white;
@@ -245,6 +246,7 @@ thead th {
   overflow: hidden;
 
   &-label {
+    padding: .1em 0;
     position: relative;
     z-index: 2;
     float: left;
@@ -253,6 +255,7 @@ thead th {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     color: $dark-grey;
+    margin: 0;
 
     &.active {
       color: $white;
