@@ -4,7 +4,7 @@ $dark-grey: #ddd;
 $orange: #DE6828;
 $orange-light: #f87016;
 $navy: #162C34;
-$green: #4fb139;
+$green: #479237;
 $red: #d44c39;
 $yellow: #f4aa0c;
 $light-black: #aaa;
@@ -118,13 +118,13 @@ td {
 
   &.maybe {
     i:first-child {
-      color: $red;
+      color: $green;
     }
   }
 
   &.pretty-sure {
     i:not(:last-child) {
-      color: $yellow;
+      color: $green;
     }
   }
 
