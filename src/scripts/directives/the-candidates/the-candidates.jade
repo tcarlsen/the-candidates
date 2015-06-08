@@ -1,4 +1,4 @@
-h1.app-header {{header}}
+h1.app-header {{headline}}
 ul.helper
   li
     | Sandsynligvis valgt iflg. Berlingske #[strong ({{stats.probably}})]
@@ -22,8 +22,8 @@ ul.helper
     | Antal mandater fordelt 
     strong ({{stats.mandates}}/179)
     div.status
-p.description {{description}}
-small.updated Senest opdateret: {{updated | date:'medium'}}
+p.description {{paragraph}}
+small.updated Senest opdateret: {{updated | date:'medium':'UTC'}}
 div.view
   div.party.toggler(ng-hide="location=='ritzau'")
     span.toggler-label Visning

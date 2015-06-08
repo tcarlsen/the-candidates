@@ -1,7 +1,13 @@
 .controller "RitzauController", ($scope, $rootScope, $http) ->
   $rootScope.order = "name"
   $rootScope.reverse = false
-  $rootScope.description = "På denne side kan du se, hvor mange personlige stemmer alle landets folketingskandidater har fået. Der tages forbehold for evt. yderligere fintællinger"
+
+  watch = $scope.$watch "header", (data) ->
+    if data
+      $rootScope.headline = data.ritzau.headline
+      $rootScope.paragraph = data.ritzau.paragraph
+
+      watch()
 
   $http.get "#{apiUrl}/storkreds/kandidater"
     .success (data) ->

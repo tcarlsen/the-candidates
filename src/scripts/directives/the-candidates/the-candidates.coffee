@@ -20,8 +20,7 @@
 
     $http.get "#{apiUrl}/header"
       .success (data) ->
-        $rootScope.header = data.headline
-        $rootScope.description = data.paragraph
+        $rootScope.header = data
         $rootScope.updated = data.last_update.replace(" ", "T")
         $rootScope.stats = data.stats
       .error (data, status, headers, config) ->
