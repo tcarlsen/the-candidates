@@ -32,7 +32,7 @@ div(ng-repeat="party in parties")
           i(ng-class="{'fa fa-sort-amount-asc': order=='-status' && reverse==true, 'fa fa-sort-amount-desc': order=='-status' && reverse==false}")
     tbody
       tr(ng-show="!party.candidates.length")
-        td(colspan="5") Endnu ikke muligt at vurdere valgte kandidater for partiet.
+        td(colspan="5") &nbsp;
       tr(ng-repeat="candidate in party.candidates | orderBy:order:reverse")
         td
           span.candidatename {{candidate.name}}
