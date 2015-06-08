@@ -140,7 +140,7 @@ td {
 
 th, td {
   &.status {
-    text-align: center;
+    text-align: right;
   }
 }
 
@@ -298,20 +298,6 @@ thead th {
   display: none;
 }
 
-.table-parti-candidates {
-  th:nth-child(2) {
-    width: 200px;
-  }
-  th:nth-child(3) {
-    width: 180px;
-  }
-  th:nth-child(4) {
-    width: 70px;
-  }
-  th:nth-child(5) {
-    width: 55px;
-  }
-}
 
 @media (min-width: 701px) {
   .table-stats {
@@ -335,12 +321,32 @@ thead th {
       }
     }
   }
+
+  .table-parti-candidates {
+    th:nth-child(2) {
+      width: 200px;
+    }
+    th:nth-child(3) {
+      width: 180px;
+    }
+    th:nth-child(4) {
+      width: 70px;
+    }
+    th:nth-child(5) {
+      width: 70px;
+    }
+  }
 }
 
 @media (max-width: 700px) {
 
   tbody {
     font-size: 0.9em;
+
+  }
+
+  th {
+    white-space: nowrap;
   }
 
   .table-stats {
