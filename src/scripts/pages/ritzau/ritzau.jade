@@ -14,7 +14,7 @@ table.striped
       th.number(ng-click="changeOrder('-votes')")
         | Stemmer&nbsp;
         i(ng-class="{'fa fa-sort-numeric-asc': order=='-votes' && reverse==true, 'fa fa-sort-numeric-desc': order=='-votes' && reverse==false}")
-      th.number(ng-click="changeOrder('-votes_pct')")
+      th.number.mobile-hide(ng-click="changeOrder('-votes_pct')")
         | Andel&nbsp;
         i(ng-class="{'fa fa-sort-numeric-asc': order=='-votes_pct' && reverse==true, 'fa fa-sort-numeric-desc': order=='-votes_pct' && reverse==false}")
   tbody
@@ -27,5 +27,5 @@ table.striped
       td.mobile-hide {{candidate.party_name}}
       td.mobile-hide {{candidate.location_name}}
       td.number {{candidate.votes | number}}
-      td.number {{candidate.votes_pct | number}}%
+      td.number.mobile-hide {{candidate.votes_pct | number}}%
       
