@@ -1,6 +1,6 @@
 {
   "name": "the-candidates",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "description": "an election tool to show all the candidates in the danish election 2015",
   "author": "tcarlsen",
   "devDependencies": {
