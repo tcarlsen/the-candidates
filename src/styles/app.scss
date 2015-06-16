@@ -398,9 +398,14 @@ thead th {
       display: none;
     }
   }
-  .helper .status {
-    float: left;
-    margin: 0 1em 0 0;
+  .helper {
+    font-size: .9em;
+    margin-bottom: .8em;
+
+    .status {
+      float: left;
+      margin: 0 1em 0 0;
+    }
   }
 
   td.status {
@@ -441,11 +446,6 @@ thead th {
     &-button {
       display: block;
       text-align: center;
-
-      &:last-child {
-        margin-left: 0;
-        margin-top: 10px;
-      }
     }
   }
   .striped {
@@ -453,6 +453,13 @@ thead th {
       line-height: 1.2em;
     }
 
+  }
+}
+
+@media (max-width: 410px) {
+  .overview-button:last-child {
+    margin-left: 0;
+    margin-top: 10px;
   }
 }
 
