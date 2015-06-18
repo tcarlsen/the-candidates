@@ -321,6 +321,7 @@ thead th {
   border-bottom-right-radius: 5px;
   padding-top: 15px;
   padding-bottom: 20px;
+  z-index: 20;
 
   &:before {
     border-top: 7px solid #BB242E;
