@@ -1,4 +1,4 @@
-apiUrl = "//54.77.4.249:8000"
+apiUrl = "//fv15api.bemit.dk"
 
 angular.module "ng-app", [
   "ngTouch"
