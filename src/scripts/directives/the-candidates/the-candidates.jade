@@ -39,3 +39,11 @@ div.view
     a.overview-button(href="http://www.politiko.dk/hvemerdevalgte") De valgte statistisk set
   .clearfix
 div.view-container(ng-view autoscroll="true")
+div.updated-popup(ng-class="{'show-popup': showPopup}")
+  h3.updated-popup-header(ng-click='refresh()') Nye resultater
+  p.updated-popup-text(ng-click='refresh()')
+    | Klik her for at
+    br
+    | opdatere siden
+  small.updated-popup-remove(ng-click='terminate()') Vis ikke denne besked igen
+  span.updated-popup-close(ng-click='showPopup = false') &times;
