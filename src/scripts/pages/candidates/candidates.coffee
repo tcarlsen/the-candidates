@@ -1,4 +1,4 @@
-.controller "CandidateController", ($scope, $rootScope, $http) ->
+.controller "CandidateController", ($scope, $rootScope, $http, tracker) ->
   $rootScope.order = 'name'
   $rootScope.reverse = false
 
@@ -14,3 +14,5 @@
       $scope.candidates = data
     .error (data, status, headers, config) ->
       return
+
+  tracker.track()

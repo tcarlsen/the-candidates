@@ -1,4 +1,4 @@
-.controller "PartyController", ($scope, $rootScope, $http) ->
+.controller "PartyController", ($scope, $rootScope, $http, tracker) ->
   $rootScope.order = 'name'
   $rootScope.reverse = false
 
@@ -14,3 +14,5 @@
       $scope.parties = data
     .error (data, status, headers, config) ->
       return
+
+  tracker.track()
