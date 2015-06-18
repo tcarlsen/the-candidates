@@ -4,8 +4,10 @@ $dark-grey: #ddd;
 $orange: #DE6828;
 $orange-light: #f87016;
 $navy: #162C34;
-$green: #479237;
-$red: #d44c39;
+$green1: #74ca61;
+$green2: #479237;
+$green3: #205515;
+$red: #205515;
 $yellow: #f4aa0c;
 $light-black: #aaa;
 
@@ -120,18 +122,18 @@ td {
 
   &.maybe {
     i:first-child {
-      color: $green;
+      color: $green1;
     }
   }
 
   &.pretty-sure {
     i:not(:last-child) {
-      color: $green;
+      color: $green2;
     }
   }
 
   &.definitely {
-    color: $green;
+    color: $green3;
   }
 }
 
