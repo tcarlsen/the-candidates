@@ -1,29 +1,29 @@
 h1.app-header {{headline}}
 ul.helper
   li
-    | Sandsynligvis valgt iflg. Berlingske #[strong ({{stats.probably}})]
+    | Sandsynligvis valgt iflg. Berlingske #[strong ({{::stats.probably}})]
     div.status.maybe
       i.fa.fa-circle
       i.fa.fa-circle
       i.fa.fa-circle
   li
-    | Valgt iflg. Berlingske #[strong ({{stats.predicted}})]
+    | Valgt iflg. Berlingske #[strong ({{::stats.predicted}})]
     div.status.pretty-sure
       i.fa.fa-circle
       i.fa.fa-circle
       i.fa.fa-circle
   li
-    | Officielt valgt #[strong ({{stats.official}})]
+    | Officielt valgt #[strong ({{::stats.official}})]
     div.status.definitely
       i.fa.fa-circle
       i.fa.fa-circle
       i.fa.fa-circle
   li.mandater 
     | Antal mandater fordelt 
-    strong ({{stats.mandates}}/179)
+    strong ({{::stats.mandates}}/179)
     div.status
 p.description {{paragraph}}
-small.updated Senest opdateret: {{updated | date:'medium'}}
+small.updated Senest opdateret: {{::updated | date:'medium'}}
 div.view
   div.party.toggler(ng-hide="location=='ritzau'")
     span.toggler-label Visning

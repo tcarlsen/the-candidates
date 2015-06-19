@@ -35,12 +35,12 @@ div(ng-repeat="party in parties")
         td(colspan="5") &nbsp;
       tr(ng-repeat="candidate in party.candidates | orderBy:order:reverse")
         td
-          a(ng-href="{{candidate.profile_url}}").candidatename {{candidate.name}}
-          span.candidateparty &nbsp;({{candidate.party_letter}})
-          span.candidatelocation {{candidate.storkreds}}
-        td.mobile-hide {{candidate.party_name}}
-        td.mobile-hide {{candidate.storkreds}}
-        td.number {{candidate.votes | number}}
+          a(ng-href="{{::candidate.profile_url}}").candidatename {{::candidate.name}}
+          span.candidateparty &nbsp;({{::candidate.party_letter}})
+          span.candidatelocation {{::candidate.storkreds}}
+        td.mobile-hide {{::candidate.party_name}}
+        td.mobile-hide {{::candidate.storkreds}}
+        td.number {{::candidate.votes | number}}
         td.status(ng-class="{'maybe': candidate.status==1, 'pretty-sure': candidate.status==2, 'definitely': candidate.status==3}")
           i.fa.fa-circle
           i.fa.fa-circle

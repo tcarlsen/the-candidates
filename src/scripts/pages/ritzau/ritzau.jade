@@ -21,11 +21,11 @@ table.striped.ritzau
     tr(ng-repeat="candidate in candidates | orderBy:order:reverse")
       td {{($index + 1) | number}}
       td
-        span.candidatename {{candidate.name}}
-        span.candidateparty &nbsp;({{candidate.party_letter}})
-        span.candidatelocation {{candidate.location_name}}
-      td.mobile-hide {{candidate.party_name}}
-      td.mobile-hide {{candidate.location_name}}
-      td.number {{candidate.votes | number}}
-      td.number.mobile-hide {{candidate.votes_pct | number}}%
+        span.candidatename {{::candidate.name}}
+        span.candidateparty &nbsp;({{::candidate.party_letter}})
+        span.candidatelocation {{::candidate.location_name}}
+      td.mobile-hide {{::candidate.party_name}}
+      td.mobile-hide {{::candidate.location_name}}
+      td.number {{::candidate.votes | number}}
+      td.number.mobile-hide {{::candidate.votes_pct | number}}%
       
