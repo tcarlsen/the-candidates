@@ -1,8 +1,10 @@
 .controller "RitzauController", ($scope, $rootScope, $http, $timeout, tracker) ->
   candidates = null
+  offset = 0
 
   $rootScope.order = "name"
   $rootScope.reverse = false
+  $scope.candidates = []
 
   watch = $scope.$watch "header", (data) ->
     if data
@@ -12,11 +14,11 @@
       watch()
 
   addCandidates = (offset) ->
-    $scope.candidates = candidates.splice(offset, 50)
-
-    offset += 50
+    $scope.candidates = $scope.candidates.concat candidates.slice(offset, (offset + 50))
 
     if offset < candidates.length
+      offset += 50
+
       $timeout ->
         addCandidates(offset)
       , 5
@@ -25,8 +27,7 @@
     .success (data) ->
       candidates = data
 
-      addCandidates(0)
-
+      addCandidates(offset)
     .error (data, status, headers, config) ->
       return
 
